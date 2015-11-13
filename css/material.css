@@ -5508,11 +5508,15 @@ legend {
   max-width: calc(100% - 30px);
 }
 .list-group .list-group-item .row-content .least-content {
-  position: absolute;
+  /*position: absolute;
+  top: 0px;*/
   right: 16px;
-  top: 0px;
   color: rgba(0, 0, 0, 0.54);
   font-size: 14px;
+  float: right;
+	position: relative;
+	top: -22px;
+
 }
 .list-group .list-group-item .list-group-item-heading {
   color: rgba(0, 0, 0, 0.77);
