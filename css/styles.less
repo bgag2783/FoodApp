@@ -1,0 +1,351 @@
+body {
+  
+  margin: 0;
+  padding: 0;
+  min-height: 700px;
+  
+  font-family: 'HelveticaNeue-Light', Helvetica, Arial, Sans-Serif;
+  color: white;
+  background: #555;
+
+  a {
+   color: white; 
+   text-decoration: none;
+  }
+  
+  h1, h2, h3, h4 {
+    font-weight: normal;
+    margin: 0px;
+  }
+  
+  h1 {
+    font-size: 80px;
+    font-family: 'HelveticaNeue-UltraLight', Helvetica, Arial, Sans-Serif;
+  }
+  
+  li {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    -webkit-padding-start: 0px;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+  }
+
+  div.city-detail section {
+    
+    &.city-header {
+      position: relative;
+      text-align: center;
+      left: 0px;
+      right: 0px;
+      margin-top: 20px;
+      height: 140px;
+    }
+    
+    &.today {
+      text-align: center;
+      position: relative;
+      left: 0px;
+      right: 0px;
+      margin-top:10px;
+      height: 120px;
+                
+      ul.today-overview {
+        text-align: left;
+        position: absolute;
+        height: 25px;
+        left:0px;
+        right: 0px;
+        top:0px;
+        padding-left: 20px;
+        padding-right: 20px;
+      
+        li {
+          position: relative;
+          float: left;
+          width: 25%;
+          
+          &:nth-child(3), &:nth-child(4) {
+           text-align: right;
+          }
+        }
+      }
+    
+      div {
+        position: absolute;
+        height: 94px;
+        top: 26px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        left: 0px;
+        right: 0px;
+        
+        ul.today-hourly-list {
+          position: relative;
+          top: 7px;
+          height: 80px;
+          & > li {
+            position: relative;
+            float: left;
+            width: 64px;
+            height: 64px;
+            
+            li {
+              font-size: 13px;
+              height: 30px;
+            }
+            img {
+              height: 20px;
+              width:20px;
+            }
+          }
+        }
+      }
+    }
+    
+    
+    &.forecast {
+      position: relative;
+      width:100%;
+      margin-top:10px;
+      padding-bottom:10px;
+      ul.forecast-list {
+        position: relative;
+        padding-left:20px;
+        padding-right:20px;
+        li {
+          height: 26px;
+          ul li {
+            position: relative;
+            float: left;
+            width: 25%;
+            line-height: 26px;
+            &:nth-child(2) {
+              text-align: right;
+              img {
+                margin-top:5px;
+                height:20px;
+                width:20px;
+              }
+            }
+            &:nth-child(3), &:nth-child(4) {
+             text-align: right;
+            }
+          }
+        }
+      }
+    }
+    
+    &.today-details {
+      position: relative;
+      width: 100%;
+      padding-bottom: 60px;
+      
+      p.today-summary {
+        margin: 0px;
+        padding-top:10px;
+        padding-left:20px;
+        padding-right:20px;
+        padding-bottom:10px;
+      }
+      
+      ul.today-details-list {
+        position: relative;
+        padding-top: 10px;
+        left: 50%;
+        width: 300px;
+        margin-left: -150px;
+        li {
+          height: 20px;
+          ul li {
+            position: relative;
+            float: left;
+            width: 140px;
+            &:nth-child(1) {
+             text-align: right;
+             padding-right:5px;
+            }
+            &:nth-child(2) {
+             padding-left:5px;
+            }
+          }
+        }
+      }
+    }
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .cities-list {
+    display: block;
+    ul {
+      position: relative;
+      li {
+        height: 84px;
+        
+        ul li {
+          position: absolute;
+          height: 84px;
+          
+          img {
+            margin-top: 9px;
+            width: 50px;
+            padding-left: 5px;
+          }
+          
+          &:nth-child(1) {
+            left:0px;
+            right: 100px;
+            
+            div {
+              padding-left: 16px;
+              &.time {
+                margin-top: 19px;
+                font-size: 15px;
+              }
+              &.city-name {
+                margin-top: 11px;
+                font-size: 30px;
+              }
+            }
+          }
+          &:nth-child(2) {
+            right: 0px;
+            width: 100px;
+            line-height: 84px;
+            font-size: 65px;
+            font-family: 'HelveticaNeue-UltraLight', Helvetica, Arial, Sans-Serif;
+          }
+        }
+      }
+    }
+  }
+}
+
+.gradient (@startColor, @endColor) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}
+  
+@sydneyColorStart: #0b131e;
+@sydneyColorEnd: #232931;
+@sydneyColorTextAndLines: #8b8f92;
+
+@sanJoseColorStart: #718291;
+@sanJoseColorEnd: #617588;
+@sanJoseColorTextAndLines: #b6c0c9;
+
+.is-sydney {
+  
+  .gradient(@sydneyColorStart, @sydneyColorEnd);
+  
+  ul.today-overview, section.today, section.forecast, p.today-summary  {
+    border-bottom: 1px solid @sydneyColorTextAndLines;
+  }
+  
+  &.today-details, nav {
+    border-top: 1px solid @sydneyColorTextAndLines;
+  }
+  
+  ul.today-overview {
+    li:nth-child(2), li:nth-child(4) {
+      color: @sydneyColorTextAndLines;
+    }
+  }
+}
+
+.is-sanjose {
+  .gradient(@sanJoseColorStart, @sanJoseColorEnd);
+        
+  ul.today-overview, section.today, section.forecast, p.today-summary {
+    border-bottom: 1px solid @sanJoseColorTextAndLines;
+  }
+  
+  &.today-details, nav {
+    border-top: 1px solid @sanJoseColorTextAndLines;
+  }
+
+  ul.today-overview {
+    li:nth-child(2), li:nth-child(4) {
+      color: @sanJoseColorTextAndLines;
+    }
+  }
+}
+
+nav {
+  position: fixed;
+  height: 42px;
+  left:0px;
+  bottom: 0px;
+  right:0px;
+  
+  
+  &.is-sydney {
+    background: @sydneyColorEnd;
+  }
+
+  &.is-sanjose {
+    background: @sanJoseColorEnd;
+  }
+  
+  div {
+    position: absolute;
+    font-size: 25px;
+    height: 42px;
+
+   &.disabled {
+    opacity: 0.5;
+   }
+      
+   &.next-prev-nav {
+     width: 120px;
+     left: 50%;
+     margin-left: -60px;
+     padding-top:10px;
+     opacity: 0.9;
+
+     div {
+       font-size: 14px;
+      }
+      
+     .prev-button {
+        left: 0px;
+        width: 20px;
+      }
+      .indicator-dots {
+        left: 30px;
+        right: 30px;
+        text-align: center;
+        
+        span {
+          opacity: 0.5;
+          &.current {
+            opacity: 1;
+          }
+        }
+      }
+      
+      .next-button {
+         right: 0px;
+         width: 20px;
+         text-align: right;
+       }
+     }
+   
+     &.list-button {
+       right:0px;
+       width: 30px;
+     }
+  }
+}
