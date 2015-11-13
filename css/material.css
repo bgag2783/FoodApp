@@ -5508,6 +5508,7 @@ legend {
   max-width: calc(100% - 30px);
 }
 .list-group .list-group-item .row-content .least-content {
+  z-index: 10;
   position: absolute;
   right: 16px;
   top: 0px;
